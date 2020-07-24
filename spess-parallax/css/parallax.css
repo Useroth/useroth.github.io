@@ -1,0 +1,33 @@
+[data-parallax] {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: black;
+}
+[data-parallax] > * {
+  top: auto;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: repeat;
+  background-position: center center;
+}
+
+[data-parallax] > *:nth-child(1) {
+  background-image: url("../img/nebula.png");
+}
+
+[data-parallax] > *:nth-child(2) {
+  background-image: url("../img/stars1.png");
+}
+
+[data-parallax] > *:nth-child(3) {
+  background-image: url("../img/stars2.png");
+}
+
+[data-parallax] > *:nth-child(4) {
+  background-image: url("../img/stars3.png");
+}
