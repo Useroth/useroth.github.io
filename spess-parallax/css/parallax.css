@@ -19,14 +19,26 @@
   background-image: url("../img/nebula.png");
 }
 
-[data-parallax] > *:nth-child(1) {
+[data-parallax] > *:nth-child(2) {
   background-image: url("../img/stars1.png");
 }
 
-[data-parallax] > *:nth-child(2) {
+[data-parallax] > *:nth-child(3) {
   background-image: url("../img/stars2.png");
 }
 
-[data-parallax] > *:nth-child(3) {
+[data-parallax] > *:nth-child(4) {
   background-image: url("../img/stars3.png");
+}
+
+[data-parallax] > *:nth-child(5) {
+  background-image: url("../img/planet.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+[data-parallax] > *:nth-child(6) {
+  background-image: url("../img/iss.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }

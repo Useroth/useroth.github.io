@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
     var windowCenterX = window.innerWidth / 2;
     var windowCenterY = window.innerHeight / 2;
     for (var c = 0; c < elms.length; c++) {
-      var motion = parseInt(elms[c].getAttribute("data-index")) / 40;
+      var motion = parseInt(elms[c].getAttribute("data-index")) / 80;
       var moveX = (windowCenterX - e.pageX) * motion + 50;
       var moveY = (windowCenterY - e.pageY) * motion + 50;
       var x = (windowCenterX + moveX) + "px";
