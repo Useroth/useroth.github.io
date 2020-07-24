@@ -8,26 +8,25 @@
   background-color: black;
 }
 [data-parallax] > * {
-  top: auto;
   position: absolute;
   width: 100vw;
   height: 100vh;
   background-repeat: repeat;
-  background-position: center center;
+  background-position: 50% 50%;
 }
 
 [data-parallax] > *:nth-child(1) {
   background-image: url("../img/nebula.png");
 }
 
-[data-parallax] > *:nth-child(2) {
+[data-parallax] > *:nth-child(1) {
   background-image: url("../img/stars1.png");
 }
 
-[data-parallax] > *:nth-child(3) {
+[data-parallax] > *:nth-child(2) {
   background-image: url("../img/stars2.png");
 }
 
-[data-parallax] > *:nth-child(4) {
+[data-parallax] > *:nth-child(3) {
   background-image: url("../img/stars3.png");
 }
