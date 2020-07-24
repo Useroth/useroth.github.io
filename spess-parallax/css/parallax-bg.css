@@ -12,7 +12,7 @@
   width: 100vw;
   height: 100vh;
   background-repeat: repeat;
-  background-position: center center; /* This needs to remain in two-value syntax, as the js will uset the four-value one to apply offsets */
+  background-position: center center;
 }
 
 [data-parallax] > *:nth-child(1) {
