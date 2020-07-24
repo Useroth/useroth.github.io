@@ -9,12 +9,13 @@ window.addEventListener("load", function () {
     var windowCenterX = window.innerWidth / 2;
     var windowCenterY = window.innerHeight / 2;
     for (var c = 0; c < elms.length; c++) {
-      var motion = parseInt(elms[c].getAttribute("data-index")) / 80;
-      var moveX = (windowCenterX - e.pageX) * motion + 50;
-      var moveY = (windowCenterY - e.pageY) * motion + 50;
+      var motion = parseInt(elms[c].getAttribute("data-index")) / 100;
+      var moveX = (windowCenterX - e.pageX) * motion;
+      var moveY = (windowCenterY - e.pageY) * motion;
       var x = (windowCenterX + moveX) + "px";
       var y = (windowCenterY + moveY) + "px";
       elms[c].style.backgroundPosition = x + " " + y;
+      console.log(e.pageX,e.pageY, moveX, moveY, x, y)
     }
   });
 });

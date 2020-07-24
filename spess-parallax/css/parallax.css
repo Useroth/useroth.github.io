@@ -34,11 +34,9 @@
 [data-parallax] > *:nth-child(5) {
   background-image: url("../img/planet.png");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 
 [data-parallax] > *:nth-child(6) {
   background-image: url("../img/iss.png");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
