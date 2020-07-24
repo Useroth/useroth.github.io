@@ -2,7 +2,7 @@ window.addEventListener("load", function () {
   var container = document.querySelector("[data-parallax]");
   var childNodes = container.children;
   for (var n = 0; n < childNodes.length; n++) {
-    childNodes[n].setAttribute("data-index", n + 1);
+    childNodes[n].setAttribute("data-index", -(n + 1));
   }
   container.addEventListener("mousemove", function (e) {
     var elms = this.children;
@@ -14,10 +14,9 @@ window.addEventListener("load", function () {
         ((windowCenterX - e.pageX) / window.innerWidth) * 100 * motion + 50;
       var moveY =
         ((windowCenterY - e.pageY) / window.innerHeight) * 100 * motion + 50;
-      var x = -moveX + "%";
-      var y = -moveY + "%";
+      var x = moveX + "%";
+      var y = moveY + "%";
       elms[c].style.backgroundPosition = x + " " + y;
-      console.log(x, y);
     }
   });
 });
