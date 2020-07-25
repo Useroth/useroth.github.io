@@ -27,7 +27,6 @@ function initParallax() {
     "mousemove",
     throttle((e) => {
       updateParallax(e.pageX, e.pageY);
-      console.log(`MouseEvent caught`);
     }, 50)
   );
 }
