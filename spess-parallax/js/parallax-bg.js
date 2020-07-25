@@ -25,7 +25,7 @@ function initParallax() {
     });
     accelerometer.start();
   } else {
-    parallaxContainer.addEventListener("mousemove", function (e) {
+    document.addEventListener("mousemove", function (e) {
       updateParallax(e.pageX, e.pageY);
     });
   }
