@@ -23,24 +23,13 @@ function initParallax() {
     parallaxElements[n].initialY = compStyle.backgroundPositionY;
   }
 
-  if (window.Accelerometer) {
-    var accelerometer = new Accelerometer({ frequency: 10 });
-
-    accelerometer.addEventListener(
-      "reading",
-      throttle((e) => {
-        updateParallax(accelerometer.x * 150, accelerometer.y * 75);
-      }, 100)
-    );
-    accelerometer.start();
-  } else {
-    document.addEventListener(
-      "mousemove",
-      throttle((e) => {
-        updateParallax(e.pageX, e.pageY);
-      }, 50)
-    );
-  }
+  document.addEventListener(
+    "mousemove",
+    throttle((e) => {
+      updateParallax(e.pageX, e.pageY);
+      console.log(`MouseEvent caught`);
+    }, 50)
+  );
 }
 
 function updateParallax(inputX, inputY) {
