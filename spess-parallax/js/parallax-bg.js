@@ -21,17 +21,21 @@ function initParallax() {
   if (window.Gyroscope) {
     var gyroscope = new Gyroscope({ frequency: 60 });
     gyroscope.addEventListener("reading", (e) => {
-      calcParallax(gyroscope.x, gyroscope.y);
+      updateParallax(gyroscope.x, gyroscope.y);
+      let element = document.getElementById('debug');
+      element.innerText = `${gyroscope.x} ${gyroscope.y}`
     });
     gyroscope.start();
   } else {
     parallaxContainer.addEventListener("mousemove", function (e) {
-      calcParallax(e.pageX, e.pageY);
+      updateParallax(e.pageX, e.pageY);
+      let element = document.getElementById('debug');
+      element.innerText = `${e.pageX} ${e.pageY}`
     });
   }
 }
 
-function calcParallax(inputX, inputY) {
+function updateParallax(inputX, inputY) {
   var windowCenterX = window.innerWidth / 2;
   var windowCenterY = window.innerHeight / 2;
   for (var c = 0; c < parallaxElements.length; c++) {
