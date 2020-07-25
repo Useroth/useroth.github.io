@@ -19,24 +19,14 @@ function initParallax() {
   }
 
   if (window.Accelerometer) {
-    let element = document.getElementById('debug');
-    element.innerText = "Accelerometer detected"
-
     var accelerometer = new Accelerometer({ frequency: 60 });
     accelerometer.addEventListener("reading", (e) => {
-      updateParallax(accelerometer.x, accelerometer.y);
-      let element = document.getElementById('debug');
-      element.innerText = `x:${accelerometer.x} y:${accelerometer.y} z:${accelerometer.z}`
+      updateParallax(accelerometer.x *100, accelerometer.y *50);
     });
     accelerometer.start();
   } else {
-    let element = document.getElementById('debug');
-    element.innerText = "Acceelerometer not detected"
-
     parallaxContainer.addEventListener("mousemove", function (e) {
       updateParallax(e.pageX, e.pageY);
-      let element = document.getElementById('debug');
-      element.innerText = `${e.pageX} ${e.pageY}`
     });
   }
 }
