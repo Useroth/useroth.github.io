@@ -21,7 +21,7 @@ function initParallax() {
   if (window.Accelerometer) {
     var accelerometer = new Accelerometer({ frequency: 60 });
     accelerometer.addEventListener("reading", (e) => {
-      updateParallax(Math.round(accelerometer.x) *100, Math.round(accelerometer.y) *50);
+      updateParallax(Math.round(accelerometer.x+accelerometer.z) *100, Math.round(accelerometer.y+accelerometer.z) *50);
     });
     accelerometer.start();
   } else {
