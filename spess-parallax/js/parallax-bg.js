@@ -54,7 +54,7 @@ function updateParallax(inputX, inputY) {
     var y = moveY + "px";
 
     parallaxElements[c].animate([{ transform: `translate(${x}, ${y})` }], {
-      duration: 3000,
+      duration: 1000,
       fill: "forwards",
     });
 
