@@ -30,6 +30,9 @@ function initParallax() {
     });
     gyroscope.start();
   } else {
+    let element = document.getElementById('debug');
+    element.innerText = "Gyro not detected"
+
     parallaxContainer.addEventListener("mousemove", function (e) {
       updateParallax(e.pageX, e.pageY);
       let element = document.getElementById('debug');
