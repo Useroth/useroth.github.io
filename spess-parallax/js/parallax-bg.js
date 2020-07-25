@@ -18,17 +18,17 @@ function initParallax() {
     );
   }
 
-  if (window.Gyroscope) {
+  if (window.Accelerometer) {
     let element = document.getElementById('debug');
     element.innerText = "Gyro detected"
 
-    var gyroscope = new Gyroscope({ frequency: 60 });
-    gyroscope.addEventListener("reading", (e) => {
-      updateParallax(gyroscope.x, gyroscope.y);
+    var accelerometer = new Accelerometer({ frequency: 60 });
+    accelerometer.addEventListener("reading", (e) => {
+      updateParallax(accelerometer.x, accelerometer.y);
       let element = document.getElementById('debug');
-      element.innerText = `${gyroscope.x} ${gyroscope.y}`
+      element.innerText = `${accelerometer.x} ${accelerometer.y}`
     });
-    gyroscope.start();
+    accelerometer.start();
   } else {
     let element = document.getElementById('debug');
     element.innerText = "Gyro not detected"
