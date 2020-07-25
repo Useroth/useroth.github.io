@@ -1,3 +1,14 @@
+function throttle(func, timeFrame) {
+  var lastTime = 0;
+  return function (...args) {
+    var now = new Date();
+    if (now - lastTime >= timeFrame) {
+      func(...args);
+      lastTime = now;
+    }
+  };
+}
+
 var parallaxContainer = document.querySelector("[data-parallax]");
 var parallaxElements = parallaxContainer.children;
 
@@ -13,15 +24,22 @@ function initParallax() {
   }
 
   if (window.Accelerometer) {
-    var accelerometer = new Accelerometer({ frequency: 10 });
-    accelerometer.addEventListener("reading", (e) => {
-      updateParallax(accelerometer.x * 150, accelerometer.y * 75);
-    });
+    var accelerometer = new Accelerometer({ frequency: 5 });
+
+    accelerometer.addEventListener(
+      "reading",
+      throttle((e) => {
+        updateParallax(accelerometer.x * 150, accelerometer.y * 75);
+      }, 200)
+    );
     accelerometer.start();
   } else {
-    document.addEventListener("mousemove", (e) => {
-      updateParallax(e.pageX, e.pageY);
-    });
+    document.addEventListener(
+      "mousemove",
+      throttle((e) => {
+        updateParallax(e.pageX, e.pageY);
+      }, 200)
+    );
   }
 }
 
@@ -35,13 +53,11 @@ function updateParallax(inputX, inputY) {
     var x = moveX + "px";
     var y = moveY + "px";
 
-    parallaxElements[c].animate(
-      [{ transform: `translate(${x}, ${y})` }],
-      {
-        duration: 10000,
-      }
-    );
-    
+    parallaxElements[c].animate([{ transform: `translate(${x}, ${y})` }], {
+      duration: 3000,
+      fill: "forwards",
+    });
+
     /*
     if (moveX + moveY < 100) {
       parallaxElements[c].style.transform = `translate(${x}, ${y})`;
