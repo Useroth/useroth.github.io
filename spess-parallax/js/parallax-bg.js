@@ -20,18 +20,18 @@ function initParallax() {
 
   if (window.Accelerometer) {
     let element = document.getElementById('debug');
-    element.innerText = "Gyro detected"
+    element.innerText = "Accelerometer detected"
 
     var accelerometer = new Accelerometer({ frequency: 60 });
     accelerometer.addEventListener("reading", (e) => {
       updateParallax(accelerometer.x, accelerometer.y);
       let element = document.getElementById('debug');
-      element.innerText = `${accelerometer.x} ${accelerometer.y}`
+      element.innerText = `x:${accelerometer.x} y:${accelerometer.y} z:${accelerometer.z}`
     });
     accelerometer.start();
   } else {
     let element = document.getElementById('debug');
-    element.innerText = "Gyro not detected"
+    element.innerText = "Acceelerometer not detected"
 
     parallaxContainer.addEventListener("mousemove", function (e) {
       updateParallax(e.pageX, e.pageY);
