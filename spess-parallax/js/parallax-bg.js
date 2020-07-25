@@ -24,13 +24,13 @@ function initParallax() {
   }
 
   if (window.Accelerometer) {
-    var accelerometer = new Accelerometer({ frequency: 5 });
+    var accelerometer = new Accelerometer({ frequency: 10 });
 
     accelerometer.addEventListener(
       "reading",
       throttle((e) => {
         updateParallax(accelerometer.x * 150, accelerometer.y * 75);
-      }, 200)
+      }, 100)
     );
     accelerometer.start();
   } else {
@@ -38,7 +38,7 @@ function initParallax() {
       "mousemove",
       throttle((e) => {
         updateParallax(e.pageX, e.pageY);
-      }, 200)
+      }, 50)
     );
   }
 }
