@@ -19,6 +19,9 @@ function initParallax() {
   }
 
   if (window.Gyroscope) {
+    let element = document.getElementById('debug');
+    element.innerText = "Gyro detected"
+
     var gyroscope = new Gyroscope({ frequency: 60 });
     gyroscope.addEventListener("reading", (e) => {
       updateParallax(gyroscope.x, gyroscope.y);
