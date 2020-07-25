@@ -17,7 +17,6 @@
 
 [data-parallax] > *:nth-child(1) {
   background-image: url("../img/nebula.png");
-  attr(data-depth) = 100;
 }
 
 [data-parallax] > *:nth-child(2) {
